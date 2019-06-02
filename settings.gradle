@@ -1,0 +1,3 @@
+rootProject.name = 'skilltree'
+include 'pandora'
+include 'ishigami'
