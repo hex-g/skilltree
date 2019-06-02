@@ -16,7 +16,7 @@ class SkillTreeRepositorySpec extends Specification {
     @Shared
     def existentAuthIdList = []
     @Shared
-    private SkillTreeRepository skillTreeRepository
+    private SkillTreeRepository skillTureeRepository
 
     @Autowired(required = true)
     def initRepo(SkillTreeRepository playerRepository){
