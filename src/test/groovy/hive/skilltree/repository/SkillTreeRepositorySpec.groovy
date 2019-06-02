@@ -16,29 +16,21 @@ class SkillTreeRepositorySpec extends Specification {
     @Shared
     def existentAuthIdList = []
     @Shared
-    private SkillTreeRepository playerRepository
+    private SkillTreeRepository skillTreeRepository
 
-    def createEmptyPlayers(int quantity){
-        quantity.times {
-            playerRepository.save new SkillTree(it.toString())
-            existentAuthIdList+=it.toString()
-        }
-    }
     @Autowired(required = true)
     def initRepo(SkillTreeRepository playerRepository){
-        this.playerRepository=playerRepository
+        this.skillTreeRepository=playerRepository
     }
 
     def setupSpec(){
-        initRepo(playerRepository)
+        initRepo(skillTreeRepository)
     }
 
     def setup() {
-        createEmptyPlayers 1
     }
 
     def cleanup() {
-        playerRepository.deleteAll()
     }
 
     def '''
@@ -47,16 +39,6 @@ class SkillTreeRepositorySpec extends Specification {
         then .
         '''() {
 
-        given:
-        def playerToPersist = createAnCompletePlayer()
-        def authenticatedId = playerToPersist.getAuthenticatedUserId()
-
-        when:
-        playerRepository.save playerToPersist
-        def persistedPlayer = playerRepository.findByAuthenticatedUserId authenticatedId
-
-        then:
-        player == persistedPlayer
     }
 
 }
