@@ -2,7 +2,7 @@ package hive.skilltree.controller
 
 import spock.lang.Specification
 
-class TaskStudentCheckSpec extends Specification {
+class ActivityCheckControllerUnitTest extends Specification {
     def '''
         Given AuthenticatedUserId in correct context,
         when perform GET,
