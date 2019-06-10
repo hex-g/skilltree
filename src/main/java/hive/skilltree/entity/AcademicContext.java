@@ -20,7 +20,7 @@ public class AcademicContext {
   private String pegagogueId;
   @JsonProperty
   @Column(name = "subject_id")
-  private String cherryId;
+  private String subjectId;
   @JsonProperty
   @Column(name = "days_of_week")
   private String daysOfWeek;
