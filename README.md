@@ -2,7 +2,9 @@
 ---
 **The profile data API**
 
-*"A person in its life is as a skillTree."*
+*"The player has a skill tree,
+  the skill tree is categorized by class
+  and every time you complete a task its progress increase"*
 
 ### First steps
 (Configuring the environment):
