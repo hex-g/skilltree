@@ -7,8 +7,9 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 @Entity
-@Table(name = "tb_user_profile")
+@Table(name = "tb_lessons")
 public class SkillTree {
+
   @Id
   @JsonIgnore
   @GeneratedValue(strategy = GenerationType.IDENTITY)
