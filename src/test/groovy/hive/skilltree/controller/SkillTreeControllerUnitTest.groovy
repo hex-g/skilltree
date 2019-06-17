@@ -7,8 +7,8 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders
 import spock.lang.Shared
 import spock.lang.Specification
 
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*
 import static hive.pandora.constant.HiveInternalHeaders.AUTHENTICATED_USER_ID
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post
 
 class SkillTreeControllerUnitTest extends Specification {
 
@@ -28,7 +28,6 @@ class SkillTreeControllerUnitTest extends Specification {
         }
                         '''
     def setup(){
-        createAnPlayer()
         mockMvc = MockMvcBuilders.standaloneSetup(new SkillTreeController(playerRepository)).build()
     }
 

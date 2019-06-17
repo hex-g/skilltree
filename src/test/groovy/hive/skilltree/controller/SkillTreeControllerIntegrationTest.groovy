@@ -1,12 +1,11 @@
 package hive.skilltree.controller
 
-
-import spock.lang.Shared
-import spock.lang.Specification
 import groovyx.net.http.ContentType
 import groovyx.net.http.RESTClient
+import spock.lang.Shared
+import spock.lang.Specification
 
-import static hive.pandora.constant.HiveInternalHeaders.*
+import static hive.pandora.constant.HiveInternalHeaders.AUTHENTICATED_USER_ID
 
 /*Integration test. only work with the system up*/
 class SkillTreeControllerIntegrationTest extends Specification {
@@ -39,9 +38,10 @@ class SkillTreeControllerIntegrationTest extends Specification {
     }
 
     def '''
-        Given ,
-        when ,
-        then .
+        Given StudentId that is enrolled in one course,
+        when perform GET to a academicContext,
+        then status 200 is received
+        and the response json contains an array of activities.
         '''() {
 
         given:
