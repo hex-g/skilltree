@@ -33,4 +33,21 @@ public class AcademicContext {
   @JsonProperty
   @OneToMany(mappedBy="academicContext")
   List<Activity> activities;
+
+  public void setActivities(final List<Activity> activities) {
+    this.activities = activities;
+  }
+
+  public AcademicContext(
+      final String pegagogueId,
+      final String subjectId,
+      final String daysOfWeek,
+      final AcademicTerm academicTerm
+  ) {
+    this.pegagogueId = pegagogueId;
+    this.subjectId = subjectId;
+    this.daysOfWeek = daysOfWeek;
+    this.academicTerm = academicTerm;
+  }
+
 }

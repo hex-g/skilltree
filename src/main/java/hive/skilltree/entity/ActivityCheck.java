@@ -19,6 +19,14 @@ public class ActivityCheck {
   private String studentId;
 
   @JsonProperty
+  @Column(name = "checked_date")
+  private String checkedDate;
+
+  @JsonProperty
+  @Column(name = "checked")
+  private Boolean checked;
+
+  @JsonProperty
   @ManyToOne(cascade = CascadeType.ALL)
   @JoinColumn(name = "activity_id", unique = true)
   private Activity activity;
