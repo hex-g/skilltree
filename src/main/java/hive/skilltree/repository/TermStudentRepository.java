@@ -8,11 +8,11 @@ import java.util.List;
 
 public interface TermStudentRepository extends JpaRepository<TermStudent, Integer> {
 
-  TermStudent findByStudentId(final String studentId);
+  List<TermStudent> findByStudentId(final String studentId);
 
   List<TermStudent> findByAcademicTerm(final AcademicTerm academicTerm);
 
   // @Query("Select * from TermStudent where TermStudent.academicTerm.termName=?1")
-  // TermStudent findByAcademicTermName(final String termName);
+  // List<TermStudent> findByAcademicTermName(final String termName);
 
 }
