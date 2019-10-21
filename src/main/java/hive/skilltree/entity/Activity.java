@@ -35,5 +35,23 @@ public class Activity {
 
   @JsonProperty
   @OneToMany(mappedBy="activity")
-  List<ActivityCheck> activityChecks;
+  private List<ActivityCheck> activityChecks;
+
+  public Activity(){}
+
+  public Activity(
+      final String name,
+      final String postDate,
+      final String type,
+      final String fileName
+  ) {
+    this.name = name;
+    this.postDate = postDate;
+    this.type = type;
+    this.fileName = fileName;
+  }
+
+  public void setAcademicContext(final AcademicContext academicContext) {
+    this.academicContext = academicContext;
+  }
 }

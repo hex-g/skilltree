@@ -2,6 +2,7 @@ package hive.skilltree.entity;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -25,13 +26,13 @@ public class TermStudent {
   @Temporal(TemporalType.TIMESTAMP)
   @Column(name = "create_date")
   private Date enrollDate;
-/*
+
   @UpdateTimestamp
   @JsonProperty
   @Temporal(TemporalType.TIMESTAMP)
   @Column(name = "modify_date")
   private Date modifyDate;
-*/
+
   @JsonProperty
   @ManyToOne(cascade = CascadeType.ALL, optional = false)
   @JoinColumn(name = "academic_term_id")
@@ -41,15 +42,12 @@ public class TermStudent {
     return id;
   }
 
+  public TermStudent(){}
+
   public TermStudent(final String studentId, final AcademicTerm term) {
     this.studentId = studentId;
     //association Code
     this.academicTerm = term;
-  }
-  public TermStudent(final String studentId, final String termName) {
-    this.studentId = studentId;
-    //association Code
-    this.academicTerm = new AcademicTerm(termName);
   }
 
 }

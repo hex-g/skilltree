@@ -1,5 +1,6 @@
 package hive.skilltree.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -34,10 +35,11 @@ public class AcademicTerm {
   @Column(name = "modify_date")
   private Date modifyDate;
 
-  @JsonProperty
+  @JsonIgnore
   @OneToMany(mappedBy="academicTerm")
   private List<AcademicContext> academicContexts;
-  @JsonProperty
+
+  @JsonIgnore
   @OneToMany(mappedBy="academicTerm")
   private List<TermStudent> termStudents;
 
@@ -68,6 +70,8 @@ public class AcademicTerm {
   public void setAcademicContexts(final List<AcademicContext> academicContexts) {
     this.academicContexts = academicContexts;
   }
+
+  public AcademicTerm(){}
 
   public void setTermStudents(final List<TermStudent> termStudents) {
     this.termStudents = termStudents;

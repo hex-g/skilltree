@@ -24,6 +24,18 @@ public class AcademicContext {
   @JsonProperty
   @Column(name = "days_of_week")
   private String daysOfWeek;
+  @JsonProperty
+  @Column(name = "lastExercise")
+  private String lastExercise;
+  @JsonProperty
+  @Column(name = "nextExamDate")
+  private String nextExamDate;
+  @JsonProperty
+  @Column(name = "progressPercentage")
+  private String progressPercentage;
+  @JsonProperty
+  @Column(name = "pedagogue")
+  private String pedagogue;
 
   @JsonProperty
   @ManyToOne(cascade = CascadeType.ALL, optional = false)
@@ -37,6 +49,7 @@ public class AcademicContext {
   public void setActivities(final List<Activity> activities) {
     this.activities = activities;
   }
+  public AcademicContext(){}
 
   public AcademicContext(
       final String pegagogueId,
